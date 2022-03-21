@@ -1,0 +1,21 @@
+import { BrowserRouter as Router, Route, Routes, Switch, Link } from 'react-router-dom';
+
+
+
+function Movie({ id, coverImg, title, summary, genres }) {
+    return (
+        <div>
+            <img src={coverImg} />
+            <h2>
+                <Link to={`/movie/${id}`}>{title}</Link>
+            </h2>
+            <p>{summary}</p>
+            <ul>{genres.map((g) => (
+                <li>{g}</li>
+            ))}
+            </ul>
+        </div>
+    )
+}
+
+export default Movie;
